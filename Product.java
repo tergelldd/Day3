@@ -1,51 +1,52 @@
+package day3;
 import java.time.LocalDate;
 
 public class Product {
-    private String name;
-    private String code;
-    private int quantity;
-    private boolean underRepair;
-    private LocalDate expirationDate;
+    private String ner; // name
+    private String code; // code
+    private int baraaniiToo; // quantity
+    private boolean zaswartaiBaraa; // underRepair
+    private LocalDate duusahOgnoo; // expirationDate
 
-    public Product(String name, String code, int quantity, boolean underRepair, LocalDate expirationDate) {
-        this.name = name;
+    public Product(String ner, String code, int baraaniiToo, boolean zaswartaiBaraa, LocalDate duusahOgnoo) {
+        this.ner = ner;
         this.code = code;
-        this.quantity = quantity;
-        this.underRepair = underRepair;
-        this.expirationDate = expirationDate;
+        this.baraaniiToo = baraaniiToo;
+        this.zaswartaiBaraa = zaswartaiBaraa;
+        this.duusahOgnoo = duusahOgnoo;
     }
 
     public String getCode() {
         return code;
     }
 
-    public int getQuantity() {
-        return quantity;
+    public int getBaraaniiToo() {
+        return baraaniiToo;
     }
 
-    public boolean isUnderRepair() {
-        return underRepair;
+    public boolean isZaswartaiBaraa() {
+        return zaswartaiBaraa;
     }
 
-    public LocalDate getExpirationDate() {
-        return expirationDate;
+    public LocalDate getDuusahOgnoo() {
+        return duusahOgnoo;
     }
 
-    public void addQuantity(int qty) {
-        this.quantity += qty;
+    public void nemToo(int too) {
+        this.baraaniiToo += too;
     }
 
-    public boolean removeQuantity(int qty) {
-        if (qty > quantity) return false;
-        this.quantity -= qty;
+    public boolean hasahToo(int too) {
+        if (too > baraaniiToo) return false;
+        this.baraaniiToo -= too;
         return true;
     }
 
     @Override
     public String toString() {
-        return "Код: " + code + " | Нэр: " + name +
-               " | Үлдэгдэл: " + quantity +
-               " | Засвартай: " + (underRepair ? "Тийм" : "Үгүй") +
-               " | Дуусах огноо: " + expirationDate;
+        return "Code: " + code + " | Ner: " + ner +
+               " | Too: " + baraaniiToo +
+               " | Zaswartai: " + (zaswartaiBaraa ? "Tiim" : "Ugui") +
+               " | Duusah ognoo: " + duusahOgnoo;
     }
 }
