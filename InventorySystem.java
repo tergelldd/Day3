@@ -1,5 +1,6 @@
-import java.util.*;
+package day3;
 import java.time.LocalDate;
+import java.util.*;
 
 public class InventorySystem {
     private Map<String, Product> productMap = new HashMap<>();
@@ -7,109 +8,112 @@ public class InventorySystem {
     private Scanner scanner = new Scanner(System.in);
 
     public void start() {
-        int choice;
+        int songolt;
         do {
-            System.out.println("\n--- Барааны бүртгэлийн систем ---");
-            System.out.println("1. Бараа нэмэх");
-            System.out.println("2. Бараа хасах");
-            System.out.println("3. Барааны жагсаалт харах");
-            System.out.println("4. Архивлах");
-            System.out.println("5. Гарах");
-            System.out.print("Сонголтоо оруулна уу: ");
-            choice = scanner.nextInt();
-            scanner.nextLine(); // newline алгасах
+            System.out.println("\n--- Baraanii Burtgeliin System ---");
+            System.out.println("1. Baraa nemeh");
+            System.out.println("2. Baraa hasah");
+            System.out.println("3. Jagsaalt harah");
+            System.out.println("4. Arhiwlah");
+            System.out.println("5. Garah");
+            System.out.print("Songoltoo oruulna uu: ");
+            songolt = scanner.nextInt();
+            scanner.nextLine();
 
-            switch (choice) {
-                case 1 -> addProduct();
-                case 2 -> removeProduct();
-                case 3 -> listProducts();
-                case 4 -> archiveProducts();
-                case 5 -> System.out.println("Системээс гарч байна...");
-                default -> System.out.println("Буруу сонголт. Дахин оролдоно уу.");
+            switch (songolt) {
+                case 1 -> nemBaraa();
+                case 2 -> hasahBaraa();
+                case 3 -> harahJagsaalt();
+                case 4 -> archiwlahBaraa();
+                case 5 -> System.out.println("Sistem haagdaj baina...");
+                default -> System.out.println("Buruu songolt.");
             }
-        } while (choice != 5);
+        } while (songolt != 5);
     }
 
-    private void addProduct() {
-        System.out.print("Барааны нэр: ");
-        String name = scanner.nextLine();
-        System.out.print("Барааны код: ");
+    private void nemBaraa() {
+        System.out.print("Baraanii ner: ");
+        String ner = scanner.nextLine();
+
+        System.out.print("Code: ");
         String code = scanner.nextLine();
-        System.out.print("Тоо ширхэг: ");
-        int qty = scanner.nextInt();
+
+        System.out.print("Too shirheg: ");
+        int too = scanner.nextInt();
         scanner.nextLine();
 
-        System.out.print("Засвартай юу? (true/false): ");
-        boolean underRepair = scanner.nextBoolean();
+        System.out.print("Zaswartai yu? (true/false): ");
+        boolean zaswartai = scanner.nextBoolean();
         scanner.nextLine();
 
-        System.out.print("Дуусах огноо (жишээ: 2025-12-31): ");
-        String dateStr = scanner.nextLine();
-        LocalDate expirationDate = LocalDate.parse(dateStr);
+        System.out.print("Duusah ognoo (yyyy-mm-dd): ");
+        String ognooStr = scanner.nextLine();
+        LocalDate ognoo = LocalDate.parse(ognooStr);
 
         if (productMap.containsKey(code)) {
-            productMap.get(code).addQuantity(qty);
-            System.out.println("Тоо ширхэг нэмэгдлээ.");
+            productMap.get(code).nemToo(too);
+            System.out.println("Too nemegdsen.");
         } else {
-            Product product = new Product(name, code, qty, underRepair, expirationDate);
-            productMap.put(code, product);
-            System.out.println("Шинэ бараа амжилттай бүртгэгдлээ.");
+            Product p = new Product(ner, code, too, zaswartai, ognoo);
+            productMap.put(code, p);
+            System.out.println("Shine baraa burtgegdlee.");
         }
     }
 
-    private void removeProduct() {
-        System.out.print("Хасах барааны код: ");
+    private void hasahBaraa() {
+        System.out.print("Hasah baraanii code: ");
         String code = scanner.nextLine();
+
         if (!productMap.containsKey(code)) {
-            System.out.println("Ийм кодтой бараа олдсонгүй.");
+            System.out.println("Iim code-toi baraa oldsongui.");
             return;
         }
 
-        System.out.print("Хасах тоо ширхэг: ");
-        int qty = scanner.nextInt();
+        System.out.print("Hasah shirheg: ");
+        int too = scanner.nextInt();
         scanner.nextLine();
 
-        Product product = productMap.get(code);
-        if (product.removeQuantity(qty)) {
-            System.out.println("Бараанаас амжилттай хаслаа.");
-            if (product.getQuantity() == 0) {
-                System.out.println("Үлдэгдэл дууссан.");
+        Product p = productMap.get(code);
+        if (p.hasahToo(too)) {
+            System.out.println("Amjilttai hasagdlaa.");
+            if (p.getBaraaniiToo() == 0) {
+                System.out.println("Uldegdel duussan.");
             }
         } else {
-            System.out.println("Хасах тоо ширхэг нь үлдэгдлээс их байна.");
+            System.out.println("Hangalttai shirheg baihgui.");
         }
     }
 
-    private void listProducts() {
+    private void harahJagsaalt() {
         if (productMap.isEmpty()) {
-            System.out.println("Одоогоор бүртгэлтэй бараа алга.");
+            System.out.println("Baraa burtgel hooson baina.");
         } else {
-            System.out.println("\n--- Барааны жагсаалт ---");
+            System.out.println("--- Baraa Jagsaalt ---");
             for (Product p : productMap.values()) {
                 System.out.println(p);
             }
         }
     }
 
-    private void archiveProducts() {
-        LocalDate today = LocalDate.now();
-        List<String> toArchive = new ArrayList<>();
+    private void archiwlahBaraa() {
+        LocalDate unuudur = LocalDate.now();
+        List<String> archiwlahCodes = new ArrayList<>();
 
         for (Product p : productMap.values()) {
-            if (p.getQuantity() == 0 || p.isUnderRepair() || p.getExpirationDate().isBefore(today)) {
+            if (p.getBaraaniiToo() == 0 || p.isZaswartaiBaraa() || p.getDuusahOgnoo().isBefore(unuudur)) {
                 archiveMap.put(p.getCode(), p);
-                toArchive.add(p.getCode());
+                archiwlahCodes.add(p.getCode());
             }
         }
 
-        for (String code : toArchive) {
+        for (String code : archiwlahCodes) {
             productMap.remove(code);
         }
 
-        if (toArchive.isEmpty()) {
-            System.out.println("Архивлах шаардлагатай бараа олдсонгүй.");
+        if (archiwlahCodes.isEmpty()) {
+            System.out.println("Arhiwlah baraa alga.");
         } else {
-            System.out.println("Архивласан бараанууд:");
+            System.out.println("Arhiwlagsan baraanuud:");
             for (Product p : archiveMap.values()) {
                 System.out.println(p);
             }
