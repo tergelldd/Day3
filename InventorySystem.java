@@ -11,16 +11,18 @@ public class InventorySystem {
             System.out.println("1. Бараа нэмэх");
             System.out.println("2. Бараа хасах");
             System.out.println("3. Барааны жагсаалт харах");
-            System.out.println("4. Гарах");
+            System.out.println("4. Бараа архивлах");
+            System.out.println("5. Гарах");
             System.out.print("Сонголтоо оруулна уу: ");
             choice = scanner.nextInt();
-            scanner.nextLine(); // newline алгасах
+            scanner.nextLine();
 
             switch (choice) {
                 case 1 -> addProduct();
                 case 2 -> removeProduct();
                 case 3 -> listProducts();
-                case 4 -> System.out.println("Системээс гарав.");
+                case 4 -> archiveProduct();
+                case 5 -> System.out.println("Системээс гарав.");
                 default -> System.out.println("Буруу сонголт. Дахин оролдоно уу.");
             }
         } while (choice != 4);
@@ -54,7 +56,7 @@ public class InventorySystem {
 
         System.out.print("Хасах тоо ширхэг: ");
         int qty = scanner.nextInt();
-        scanner.nextLine(); // newline
+        scanner.nextLine();
 
         Product product = productMap.get(code);
         if (product.removeQuantity(qty)) {
@@ -76,6 +78,30 @@ public class InventorySystem {
             for (Product p : productMap.values()) {
                 System.out.println(p);
             }
+        }
+    }
+
+    private void archiveProduct() {
+        System.out.print("Архивлах барааны код: ");
+        String code = scanner.nextLine();
+        if (!productMap.containsKey(code)) {
+            System.out.println("Ийм кодтой бараа олдсонгүй.");
+            return;
+        }
+
+        System.out.print("Архивлах тоо ширхэг: ");
+        int qty = scanner.nextInt();
+        scanner.nextLine();
+
+        Product product = productMap.get(code);
+        if (product.removeQuantity(qty)) {
+            System.out.println("Амжилттай архивлалаа.");
+            if (product.getQuantity() == 0) {
+                productMap.remove(code);
+                System.out.println("Үлдэгдэл дууссан тул бүртгэлээс устгалаа.");
+            }
+        } else {
+            System.out.println("Архивлах тоо нь үлдэгдлээс их байна.");
         }
     }
 
