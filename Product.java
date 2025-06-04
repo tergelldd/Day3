@@ -2,11 +2,11 @@ package day3;
 import java.time.LocalDate;
 
 public class Product {
-    private String ner; // name
-    private String code; // code
-    private int baraaniiToo; // quantity
-    private boolean zaswartaiBaraa; // underRepair
-    private LocalDate duusahOgnoo; // expirationDate
+    private String ner; 
+    private String code; 
+    private int baraaniiToo; 
+    private boolean zaswartaiBaraa; 
+    private LocalDate duusahOgnoo; 
 
     public Product(String ner, String code, int baraaniiToo, boolean zaswartaiBaraa, LocalDate duusahOgnoo) {
         this.ner = ner;
