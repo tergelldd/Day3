@@ -1,12 +1,18 @@
+import java.time.LocalDate;
+
 public class Product {
     private String name;
     private String code;
     private int quantity;
+    private boolean underRepair;
+    private LocalDate expirationDate;
 
-    public Product(String name, String code, int quantity) {
+    public Product(String name, String code, int quantity, boolean underRepair, LocalDate expirationDate) {
         this.name = name;
         this.code = code;
         this.quantity = quantity;
+        this.underRepair = underRepair;
+        this.expirationDate = expirationDate;
     }
 
     public String getCode() {
@@ -15,6 +21,14 @@ public class Product {
 
     public int getQuantity() {
         return quantity;
+    }
+
+    public boolean isUnderRepair() {
+        return underRepair;
+    }
+
+    public LocalDate getExpirationDate() {
+        return expirationDate;
     }
 
     public void addQuantity(int qty) {
@@ -29,6 +43,9 @@ public class Product {
 
     @Override
     public String toString() {
-        return code + " - " + name + " | Үлдэгдэл: " + quantity + " ширхэг";
+        return "Код: " + code + " | Нэр: " + name +
+               " | Үлдэгдэл: " + quantity +
+               " | Засвартай: " + (underRepair ? "Тийм" : "Үгүй") +
+               " | Дуусах огноо: " + expirationDate;
     }
 }
