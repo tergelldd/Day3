@@ -12,33 +12,33 @@
 Манай бүтээгдэхүүн Baraa, ArchivtHadgalah, HereglegchiinTses, NootsUdirdlaga, SankhuuUdirdlaga, ZasvartUdirdlaga, Ehleh гэсэн 7 class -аас бүрдэж байгаа
 Үүнд: 
   -Baraa
-    String ner
-    String code
-    int shirheg
-    double une
-    boolean zaswartai
-    localDate ognoo   гэсэн гишүүн өгөгдөлтэй , 
-    getters, setters функцуудтай
- - ArchivtHadgalah
-    List<Baraa> arhiv  гэсэн гишүүн өгөгдөлтэй,
-    arhivtOruulah, haruulah гэсэн функцуудтай
-- HereglegchiinTses
-    noots
-    sanhuu
-    zasvar
-    arhiv
-    orolt гэсэн гишүүн өгөгдөлтэй
-    menuHarah, baraaNemeh, borluulah, zasvarOruulah, arhivtOruulah гэсэн функцуудтай
+    - String ner
+    - String code
+    - int shirheg
+    - double une
+    - boolean zaswartai
+    - localDate ognoo   гэсэн гишүүн өгөгдөлтэй , 
+    - getters, setters функцуудтай
+-ArchivtHadgalah
+    - List<Baraa> arhiv  гэсэн гишүүн өгөгдөлтэй,
+    - arhivtOruulah, haruulah гэсэн функцуудтай
+  -HereglegchiinTses
+    - noots
+    - sanhuu
+    - zasvar
+    - arhiv
+    - orolt гэсэн гишүүн өгөгдөлтэй
+    - menuHarah, baraaNemeh, borluulah, zasvarOruulah, arhivtOruulah гэсэн функцуудтай
   
-- NootsUdirdlaga
-  - baraanuud гэсэн гишүүн өгөгдөлтэй  
-  -  baraaNemeh, borluulah, haruulah, baraaAwah, ustgah     функцуудтай
+  -NootsUdirdlaga
+   - baraanuud гэсэн гишүүн өгөгдөлтэй  
+   - baraaNemeh, borluulah, haruulah, baraaAwah, ustgah     функцуудтай
  
-- SankhuuUdirdlaga 
- - orlogo
- - zarlaga гэсэн гишүүн өгөгдөлтэй , orlogoNemeh, zarlagaHarah , tailan гэсэн функцуудтай
-- ZasvarUdirdaadag
- - zasvartai гэсэн гишүүн өгөгдөлтэй , zasvartOruulah, zasvarDuussan, haruulah  гэсэн функцуудтай
+  -SankhuuUdirdlaga 
+  - orlogo
+  - zarlaga гэсэн гишүүн өгөгдөлтэй , orlogoNemeh, zarlagaHarah , tailan гэсэн функцуудтай
+  - ZasvarUdirdaadag
+  - zasvartai гэсэн гишүүн өгөгдөлтэй , zasvartOruulah, zasvarDuussan, haruulah  гэсэн функцуудтай
 	
 	
 	
