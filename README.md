@@ -20,15 +20,15 @@
     localDate ognoo   гэсэн гишүүн өгөгдөлтэй , 
     getters, setters функцуудтай
  - ArchivtHadgalah
-   - List<Baraa> arhiv  гэсэн гишүүн өгөгдөлтэй,
-   - arhivtOruulah, haruulah гэсэн функцуудтай
+    List<Baraa> arhiv  гэсэн гишүүн өгөгдөлтэй,
+    arhivtOruulah, haruulah гэсэн функцуудтай
 - HereglegchiinTses
-   - noots
-   - sanhuu
-   - zasvar
-   - arhiv
-   - orolt гэсэн гишүүн өгөгдөлтэй
-   - menuHarah, baraaNemeh, borluulah, zasvarOruulah, arhivtOruulah гэсэн функцуудтай
+    noots
+    sanhuu
+    zasvar
+    arhiv
+    orolt гэсэн гишүүн өгөгдөлтэй
+    menuHarah, baraaNemeh, borluulah, zasvarOruulah, arhivtOruulah гэсэн функцуудтай
   
 - NootsUdirdlaga
   - baraanuud гэсэн гишүүн өгөгдөлтэй  
