@@ -11,7 +11,7 @@
 
 Манай бүтээгдэхүүн Baraa, ArchivtHadgalah, HereglegchiinTses, NootsUdirdlaga, SankhuuUdirdlaga, ZasvartUdirdlaga, Ehleh гэсэн 7 class -аас бүрдэж байгаа
 Үүнд: 
-  -Baraa
+-Baraa
     - String ner
     - String code
     - int shirheg
@@ -22,7 +22,7 @@
 -ArchivtHadgalah
     - List<Baraa> arhiv  гэсэн гишүүн өгөгдөлтэй,
     - arhivtOruulah, haruulah гэсэн функцуудтай
-  -HereglegchiinTses
+-HereglegchiinTses
     - noots
     - sanhuu
     - zasvar
@@ -30,11 +30,11 @@
     - orolt гэсэн гишүүн өгөгдөлтэй
     - menuHarah, baraaNemeh, borluulah, zasvarOruulah, arhivtOruulah гэсэн функцуудтай
   
-  -NootsUdirdlaga
+-NootsUdirdlaga
    - baraanuud гэсэн гишүүн өгөгдөлтэй  
    - baraaNemeh, borluulah, haruulah, baraaAwah, ustgah     функцуудтай
  
-  -SankhuuUdirdlaga 
+ -SankhuuUdirdlaga 
   - orlogo
   - zarlaga гэсэн гишүүн өгөгдөлтэй , orlogoNemeh, zarlagaHarah , tailan гэсэн функцуудтай
   - ZasvarUdirdaadag
