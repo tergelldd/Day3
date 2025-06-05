@@ -10,7 +10,9 @@
 Үйл үг: устгах, үүсгэх, жагсаалт харах, архивлэсэн бараа, орлого, зарлага зэрэг багтаж байгаа.
 
 Манай бүтээгдэхүүн Baraa, ArchivtHadgalah, HereglegchiinTses, NootsUdirdlaga, SankhuuUdirdlaga, ZasvartUdirdlaga, Ehleh гэсэн 7 class -аас бүрдэж байгаа
+
 Үүнд: 
+
 -Baraa
     - String ner
     - String code
@@ -19,9 +21,11 @@
     - boolean zaswartai
     - localDate ognoo   гэсэн гишүүн өгөгдөлтэй , 
     - getters, setters функцуудтай
+    
 -ArchivtHadgalah
     - List<Baraa> arhiv  гэсэн гишүүн өгөгдөлтэй,
     - arhivtOruulah, haruulah гэсэн функцуудтай
+    
 -HereglegchiinTses
     - noots
     - sanhuu
