@@ -1,5 +1,3 @@
-package day3;
-
 import java.util.Scanner;
 
 public class HereglegchiinTses {
@@ -112,5 +110,11 @@ public class HereglegchiinTses {
         } else {
             System.out.println("Бараа олдсонгүй.");
         }
+    }
+}
+class Ehleh {
+    public static void main(String[] args) {
+        HereglegchiinTses tses = new HereglegchiinTses();
+        tses.ehluleh();
     }
 }

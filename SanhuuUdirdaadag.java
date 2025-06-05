@@ -1,5 +1,3 @@
-package day3;
-
 public class SanhuuUdirdaadag {
     private double orlogo;
     private double zarlaga;
@@ -15,6 +13,11 @@ public class SanhuuUdirdaadag {
     public void tailan() {
         System.out.println("Нийт орлого: ₮" + orlogo);
         System.out.println("Нийт зарлага: ₮" + zarlaga);
-        System.out.println("Цэвэр ашиг: ₮" + (orlogo - zarlaga));
+        if (zarlaga < orlogo) {
+            System.out.println("Цэвэр ашиг: ₮" + (orlogo - zarlaga));
+        }
+        else {
+            System.out.println("Ашиг байхгүй");
+        }
     }
 }
